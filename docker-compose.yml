@@ -1,0 +1,12 @@
+services:
+  code:
+    container_name: code
+    build:
+      context: code
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./code:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: python -u app.py
